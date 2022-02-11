@@ -5,11 +5,12 @@ import UIKit
 
 struct GestureView: View {
     @State private var diagnosticText = "Nothing detected"
+    @State private var spriteProxies = [SpriteProxy]()
 
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.blue)
+                .fill(.clear)
                 .onGesture(
                     onPan: { sender in
                         let position = sender.location(in: sender.view)
@@ -22,12 +23,18 @@ struct GestureView: View {
                     onTap: { sender in
                         let position = sender.location(in: sender.view)
                         diagnosticText = "Tapped at \(position.show(3))"
+
+                        spriteProxies.append(SpriteProxy(position: position))
                     }
                 )
 
             Text(diagnosticText)
                 .foregroundColor(.yellow)
                 .font(.title)
+
+            ForEach(spriteProxies) {
+                $0
+            }
         }
     }
 }
