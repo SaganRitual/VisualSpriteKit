@@ -42,6 +42,7 @@ struct GestureView: View {
 struct Previews_GestureView_Previews: PreviewProvider {
     static var previews: some View {
         GestureView()
+            .preferredColorScheme(.dark)
     }
 }
 
