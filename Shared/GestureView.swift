@@ -51,12 +51,14 @@ extension View {
     func onGesture(
         onPan: @escaping (UIPanGestureRecognizer) -> Void = { _ in },
         onPinch: @escaping (UIPinchGestureRecognizer) -> Void = { _ in },
+        onRotate: @escaping (UIRotationGestureRecognizer) -> Void = { _ in },
         onTap: @escaping (UITapGestureRecognizer) -> Void = { _ in }
     ) -> some View {
         self.overlay(
             GestureHandler(
                 onPan: onPan,
                 onPinch: onPinch,
+                onRotate: onRotate,
                 onTap: onTap
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -67,6 +69,7 @@ extension View {
 fileprivate struct GestureHandler: UIViewRepresentable {
     var onPan: (UIPanGestureRecognizer) -> Void
     var onPinch: (UIPinchGestureRecognizer) -> Void
+    var onRotate: (UIRotationGestureRecognizer) -> Void
     var onTap: (UITapGestureRecognizer) -> Void
 
     final class Coordinator: NSObject {
@@ -75,9 +78,10 @@ fileprivate struct GestureHandler: UIViewRepresentable {
             self.base = base
         }
 
-        @objc func onTap(sender: UITapGestureRecognizer) { base.onTap(sender) }
         @objc func onPan(sender: UIPanGestureRecognizer) { base.onPan(sender) }
         @objc func onPinch(sender: UIPinchGestureRecognizer) { base.onPinch(sender) }
+        @objc func onRotate(sender: UIRotationGestureRecognizer) { base.onRotate(sender) }
+        @objc func onTap(sender: UITapGestureRecognizer) { base.onTap(sender) }
     }
 
     func makeCoordinator() -> Coordinator {
@@ -101,6 +105,9 @@ fileprivate struct GestureHandler: UIViewRepresentable {
 
             let pinchRec = UIPinchGestureRecognizer(target: coordinator, action: #selector(GestureHandler.Coordinator.onPinch(sender:)))
             addGestureRecognizer(pinchRec)
+
+            let rotateRec = UIRotationGestureRecognizer(target: coordinator, action: #selector(GestureHandler.Coordinator.onRotate(sender:)))
+            addGestureRecognizer(rotateRec)
 
             let tapRec = UITapGestureRecognizer(target: coordinator, action: #selector(GestureHandler.Coordinator.onTap(sender:)))
             addGestureRecognizer(tapRec)

@@ -17,7 +17,7 @@ struct SpriteMenu: View {
                     )
 
                     Button(
-                        action: { },
+                        action: { proxyState = .rotate },
                         label: {
                             Label("Rotate", systemImage: "arrow.triangle.2.circlepath")
                         }

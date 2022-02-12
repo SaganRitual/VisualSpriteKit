@@ -11,14 +11,22 @@ enum SelectorViewSize: PreferenceKey {
 
 
 struct SelectorHandle: View {
+    let color: Color
+
+    init(color: Color = .blue) { self.color = color }
+
     var body: some View {
         Circle()
-            .fill(.blue)
+            .fill(color)
             .frame(width: 16, height: 16)
     }
 }
 
 struct SelectorView: View {
+    enum Mode { case move, rotate, scale }
+
+    let mode: Mode
+    let rotation: Angle
     let size: CGSize
 
     var body: some View {
@@ -27,32 +35,40 @@ struct SelectorView: View {
                 .strokeBorder(.blue, lineWidth: 2)
                 .frame(width: size.width, height: size.height)
 
-            Rectangle()
-                .fill(.blue)
-                .frame(width: 2, height: size.height)
+            if mode == .move {
+                Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+            } else {
+                Rectangle()
+                    .fill(.blue)
+                    .frame(width: 2, height: size.height)
 
-            Rectangle()
-                .fill(.blue)
-                .frame(width: size.width, height: 2)
+                Rectangle()
+                    .fill(.blue)
+                    .frame(width: size.width, height: 2)
+            }
 
-            SelectorHandle()
-                .offset(y: -size.height / 2)
+            if mode == .rotate {
+                SelectorHandle(color: .green)
+                    .offset(y: -size.height / 2)
 
-            SelectorHandle()
-                .offset(x: -size.width / 2)
+                SelectorHandle()
+                    .offset(x: -size.width / 2)
 
-            SelectorHandle()
-                .offset(y: size.height / 2)
+                SelectorHandle()
+                    .offset(y: size.height / 2)
 
-            SelectorHandle()
-                .offset(x: size.width / 2)
+                SelectorHandle()
+                    .offset(x: size.width / 2)
+            }
         }
     }
 }
 
 struct SelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectorView(size: CGSize(width: 100, height: 100))
+        SelectorView(mode: .scale, rotation: .zero, size: CGSize(width: 100, height: 100))
             .preferredColorScheme(.dark)
     }
 }
