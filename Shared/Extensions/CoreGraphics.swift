@@ -27,6 +27,10 @@ extension CGPoint {
         CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 
+    static func += (_ lhs: inout CGPoint, _ rhs: CGPoint) {
+        lhs = lhs + rhs
+    }
+
     static func + (_ lhs: CGPoint, _ rhs: CGSize) -> CGPoint {
         CGPoint(x: lhs.x + rhs.width, y: lhs.y + rhs.height)
     }
@@ -53,6 +57,8 @@ extension CGPoint {
 }
 
 extension CGSize {
+    func asPoint() -> CGPoint { CGPoint(x: width, y: height) }
+
     static func - (_ lhs: CGSize, _ rhs: CGSize) -> CGSize {
         CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
     }
