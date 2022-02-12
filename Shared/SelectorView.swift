@@ -14,45 +14,45 @@ struct SelectorHandle: View {
     var body: some View {
         Circle()
             .fill(.blue)
-            .frame(width: 32, height: 32)
+            .frame(width: 16, height: 16)
     }
 }
 
 struct SelectorView: View {
-    @State private var selectorViewSize = CGSize.zero
+    let size: CGSize
 
     var body: some View {
         ZStack {
             Circle()
                 .strokeBorder(.blue, lineWidth: 2)
-                .background(
-                    GeometryReader { Color.clear.preference(key: SelectorViewSize.self, value: $0.size) }
-                        .onPreferenceChange(SelectorViewSize.self) {
-                            let side = min($0.width, $0.height)
-                            selectorViewSize = CGSize(width: side, height: side)
-                        }
-                )
+                .frame(width: size.width, height: size.height)
 
             Rectangle()
                 .fill(.blue)
-                .frame(width: 2, height: selectorViewSize.height)
+                .frame(width: 2, height: size.height)
 
             Rectangle()
                 .fill(.blue)
-                .frame(width: selectorViewSize.width, height: 2)
+                .frame(width: size.width, height: 2)
 
-            Button(
-                action: {},
-                label: { SelectorHandle() }
-            )
-            .offset(y: -selectorViewSize.height / 2)
+            SelectorHandle()
+                .offset(y: -size.height / 2)
+
+            SelectorHandle()
+                .offset(x: -size.width / 2)
+
+            SelectorHandle()
+                .offset(y: size.height / 2)
+
+            SelectorHandle()
+                .offset(x: size.width / 2)
         }
     }
 }
 
 struct SelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectorView()
+        SelectorView(size: CGSize(width: 100, height: 100))
             .preferredColorScheme(.dark)
     }
 }

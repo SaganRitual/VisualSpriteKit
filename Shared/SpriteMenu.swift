@@ -10,25 +10,26 @@ struct SpriteMenu: View {
             content: {
                 Section {
                     Button(
-                        action: {
-                            proxyState = .move
-                        },
+                        action: { proxyState = .move },
                         label: {
                             Label("Move", systemImage: "arrow.up.and.down.and.arrow.left.and.right")
                         }
                     )
 
                     Button(
-                        action: {},
+                        action: { },
                         label: {
                             Label("Rotate", systemImage: "arrow.triangle.2.circlepath")
                         }
                     )
 
                     Button(
-                        action: {},
+                        action: { proxyState = .scale },
                         label: {
-                            Label("Scale", systemImage: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left")
+                            Label(
+                                "Scale",
+                                systemImage: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left"
+                            )
                         }
                     )
                 }
