@@ -4,8 +4,12 @@ import SwiftUI
 import UIKit
 
 struct GestureView: View {
+    @EnvironmentObject var gameScene: GameScene
+
     @State private var diagnosticText = "Nothing detected"
-    @State private var spriteProxies = [SpriteProxy]()
+    @State private var spriteProxies = [SpriteProxyView]()
+
+    let size: CGSize
 
     var body: some View {
         ZStack {
@@ -24,7 +28,9 @@ struct GestureView: View {
                         let position = sender.location(in: sender.view)
                         diagnosticText = "Tapped at \(position.show(3))"
 
-                        spriteProxies.append(SpriteProxy(position: position))
+                        let proxy = SpriteProxy(position, .zero, 1.0)
+                        proxy.postInit(gameScene.addSprite(at: position))
+                        spriteProxies.append(SpriteProxyView(proxy: proxy))
                     }
                 )
 
@@ -36,12 +42,13 @@ struct GestureView: View {
                 $0
             }
         }
+        .frame(width: size.width, height: size.height)
     }
 }
 
 struct Previews_GestureView_Previews: PreviewProvider {
     static var previews: some View {
-        GestureView()
+        GestureView(size: AppDefinitions.gameSceneSize)
             .preferredColorScheme(.dark)
     }
 }

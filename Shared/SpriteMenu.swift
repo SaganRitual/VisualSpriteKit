@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct SpriteMenu: View {
-    @Binding var proxyState: SpriteProxy.ProxyState
+    @Binding var proxyState: SpriteProxyView.ProxyState
 
     var body: some View {
         Menu(

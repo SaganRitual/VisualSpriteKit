@@ -4,13 +4,6 @@ import SpriteKit
 import SwiftUI
 import UIKit
 
-enum GameViewSize: PreferenceKey {
-    static var defaultValue = CGSize.zero
-    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
-        value = nextValue()
-    }
-}
-
 struct GameView: View {
     @EnvironmentObject var gameScene: GameScene
 
@@ -30,26 +23,11 @@ struct GameView: View {
         )
         .aspectRatio(1.0, contentMode: .fit)
         .background(
-            GeometryReader { Color.clear.preference(key: GameViewSize.self, value: $0.size) }
-                .onPreferenceChange(GameViewSize.self) { gameViewSize = $0 }
-        )
-        .onGesture(
-            onPan: {
-                if $0.state == .began {
-                    let start = $0.location(in: nil)
-                    print("start", start)
+            GeometryReader { Color.purple.preference(key: ArenaSize.self, value: $0.size) }
+                .onPreferenceChange(ArenaSize.self) {
+                    gameViewSize = $0
+                    gameScene.viewSize = $0
                 }
-
-                let translation = $0.translation(in: nil)
-                print("translation", translation)
-            },
-            onPinch: {
-                print("pinched")
-            },
-            onTap: {
-                let spritePosition = ($0 - gameViewSize / 2).yFlip() / gameViewSize
-                gameScene.tap(at: spritePosition)
-            }
         )
     }
 }

@@ -4,18 +4,16 @@ import SwiftUI
 
 @main
 struct LorentzApp: App {
-//    @StateObject var gameScene: GameScene
-//
-//    init() {
-//        let size = CGSize(width: AppDefinitions.gameSceneSide, height: AppDefinitions.gameSceneSide)
-//        let gs = GameScene(size: size)
-//        _gameScene = StateObject(wrappedValue: gs)
-//    }
+    @StateObject var gameScene: GameScene
+
+    init() {
+        _gameScene = StateObject(wrappedValue: GameScene(size: AppDefinitions.gameSceneSize))
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-//                .environmentObject(gameScene)
+                .environmentObject(gameScene)
         }
     }
 }

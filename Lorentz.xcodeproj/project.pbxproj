@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4140D6C27B899FC00A324ED /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B1E827B2065C00717CD5 /* GameScene.swift */; };
+		D4140D6D27B899FD00A324ED /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B1E827B2065C00717CD5 /* GameScene.swift */; };
+		D4140D6F27B89BBC00A324ED /* SpriteKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D6E27B89BBC00A324ED /* SpriteKit.swift */; };
+		D4140D7027B89BBC00A324ED /* SpriteKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D6E27B89BBC00A324ED /* SpriteKit.swift */; };
+		D4140D7227B89C5C00A324ED /* SpriteProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D7127B89C5C00A324ED /* SpriteProxy.swift */; };
+		D4140D7327B89C5C00A324ED /* SpriteProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D7127B89C5C00A324ED /* SpriteProxy.swift */; };
+		D4140D7427B89D4D00A324ED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B1E927B2065C00717CD5 /* GameView.swift */; };
+		D4140D7527B89D4E00A324ED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B1E927B2065C00717CD5 /* GameView.swift */; };
+		D4140D7727B89D7A00A324ED /* AppDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D7627B89D7A00A324ED /* AppDefinitions.swift */; };
+		D4140D7827B89D7A00A324ED /* AppDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D7627B89D7A00A324ED /* AppDefinitions.swift */; };
 		D499B18127B205DA00717CD5 /* LorentzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17127B205D800717CD5 /* LorentzApp.swift */; };
 		D499B18227B205DA00717CD5 /* LorentzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17127B205D800717CD5 /* LorentzApp.swift */; };
 		D499B18327B205DA00717CD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17227B205D800717CD5 /* ContentView.swift */; };
@@ -81,11 +91,14 @@
 		D4ADF10F27B71145006CA65C /* SpriteMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ADF10D27B71145006CA65C /* SpriteMenu.swift */; };
 		D4ADF11127B7416B006CA65C /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ADF11027B7416B006CA65C /* SelectorView.swift */; };
 		D4ADF11227B7416B006CA65C /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ADF11027B7416B006CA65C /* SelectorView.swift */; };
-		D4D4530827B758E7008B6E0C /* SpriteProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4530727B758E7008B6E0C /* SpriteProxy.swift */; };
-		D4D4530927B758E7008B6E0C /* SpriteProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4530727B758E7008B6E0C /* SpriteProxy.swift */; };
+		D4D4530827B758E7008B6E0C /* SpriteProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4530727B758E7008B6E0C /* SpriteProxyView.swift */; };
+		D4D4530927B758E7008B6E0C /* SpriteProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4530727B758E7008B6E0C /* SpriteProxyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4140D6E27B89BBC00A324ED /* SpriteKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKit.swift; sourceTree = "<group>"; };
+		D4140D7127B89C5C00A324ED /* SpriteProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteProxy.swift; sourceTree = "<group>"; };
+		D4140D7627B89D7A00A324ED /* AppDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefinitions.swift; sourceTree = "<group>"; };
 		D499B17127B205D800717CD5 /* LorentzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LorentzApp.swift; sourceTree = "<group>"; };
 		D499B17227B205D800717CD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D499B17327B205DA00717CD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,7 +141,7 @@
 		D4ADF10827B708ED006CA65C /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
 		D4ADF10D27B71145006CA65C /* SpriteMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteMenu.swift; sourceTree = "<group>"; };
 		D4ADF11027B7416B006CA65C /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
-		D4D4530727B758E7008B6E0C /* SpriteProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteProxy.swift; sourceTree = "<group>"; };
+		D4D4530727B758E7008B6E0C /* SpriteProxyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteProxyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,12 +175,14 @@
 			isa = PBXGroup;
 			children = (
 				D499B17127B205D800717CD5 /* LorentzApp.swift */,
+				D4140D7627B89D7A00A324ED /* AppDefinitions.swift */,
 				D499B17227B205D800717CD5 /* ContentView.swift */,
 				D499B1E827B2065C00717CD5 /* GameScene.swift */,
 				D499B1E927B2065C00717CD5 /* GameView.swift */,
 				D4ADF10327B7089C006CA65C /* GestureView.swift */,
 				D4ADF11027B7416B006CA65C /* SelectorView.swift */,
-				D4D4530727B758E7008B6E0C /* SpriteProxy.swift */,
+				D4140D7127B89C5C00A324ED /* SpriteProxy.swift */,
+				D4D4530727B758E7008B6E0C /* SpriteProxyView.swift */,
 				D4ADF10D27B71145006CA65C /* SpriteMenu.swift */,
 				D499B17327B205DA00717CD5 /* Assets.xcassets */,
 				D4ADF10627B708ED006CA65C /* Extensions */,
@@ -242,6 +257,7 @@
 			children = (
 				D4ADF10827B708ED006CA65C /* CoreGraphics.swift */,
 				D4ADF10727B708ED006CA65C /* Image.swift */,
+				D4140D6E27B89BBC00A324ED /* SpriteKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -400,14 +416,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D4530827B758E7008B6E0C /* SpriteProxy.swift in Sources */,
+				D4140D6C27B899FC00A324ED /* GameScene.swift in Sources */,
+				D4D4530827B758E7008B6E0C /* SpriteProxyView.swift in Sources */,
 				D4ADF10927B708ED006CA65C /* Image.swift in Sources */,
 				D4ADF11127B7416B006CA65C /* SelectorView.swift in Sources */,
 				D499B18327B205DA00717CD5 /* ContentView.swift in Sources */,
+				D4140D6F27B89BBC00A324ED /* SpriteKit.swift in Sources */,
+				D4140D7727B89D7A00A324ED /* AppDefinitions.swift in Sources */,
 				D499B18127B205DA00717CD5 /* LorentzApp.swift in Sources */,
 				D4ADF10E27B71145006CA65C /* SpriteMenu.swift in Sources */,
 				D4ADF10427B7089C006CA65C /* GestureView.swift in Sources */,
+				D4140D7227B89C5C00A324ED /* SpriteProxy.swift in Sources */,
 				D499B19427B2060700717CD5 /* SpritePool.swift in Sources */,
+				D4140D7427B89D4D00A324ED /* GameView.swift in Sources */,
 				D4ADF10B27B708ED006CA65C /* CoreGraphics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,14 +437,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D4530927B758E7008B6E0C /* SpriteProxy.swift in Sources */,
+				D4140D6D27B899FD00A324ED /* GameScene.swift in Sources */,
+				D4D4530927B758E7008B6E0C /* SpriteProxyView.swift in Sources */,
 				D4ADF10A27B708ED006CA65C /* Image.swift in Sources */,
 				D4ADF11227B7416B006CA65C /* SelectorView.swift in Sources */,
 				D499B18427B205DA00717CD5 /* ContentView.swift in Sources */,
+				D4140D7027B89BBC00A324ED /* SpriteKit.swift in Sources */,
+				D4140D7827B89D7A00A324ED /* AppDefinitions.swift in Sources */,
 				D499B18227B205DA00717CD5 /* LorentzApp.swift in Sources */,
 				D4ADF10F27B71145006CA65C /* SpriteMenu.swift in Sources */,
 				D4ADF10527B7089C006CA65C /* GestureView.swift in Sources */,
+				D4140D7327B89C5C00A324ED /* SpriteProxy.swift in Sources */,
 				D499B19527B2060700717CD5 /* SpritePool.swift in Sources */,
+				D4140D7527B89D4E00A324ED /* GameView.swift in Sources */,
 				D4ADF10C27B708ED006CA65C /* CoreGraphics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
