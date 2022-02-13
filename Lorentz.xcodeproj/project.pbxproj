@@ -17,6 +17,10 @@
 		D4140D7527B89D4E00A324ED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B1E927B2065C00717CD5 /* GameView.swift */; };
 		D4140D7727B89D7A00A324ED /* AppDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D7627B89D7A00A324ED /* AppDefinitions.swift */; };
 		D4140D7827B89D7A00A324ED /* AppDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140D7627B89D7A00A324ED /* AppDefinitions.swift */; };
+		D4140DC227B9966900A324ED /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC127B9966900A324ED /* Foundation.swift */; };
+		D4140DC327B9966900A324ED /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC127B9966900A324ED /* Foundation.swift */; };
+		D4140DC527B9974100A324ED /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC427B9974100A324ED /* SwiftUI.swift */; };
+		D4140DC627B9974100A324ED /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC427B9974100A324ED /* SwiftUI.swift */; };
 		D499B18127B205DA00717CD5 /* LorentzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17127B205D800717CD5 /* LorentzApp.swift */; };
 		D499B18227B205DA00717CD5 /* LorentzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17127B205D800717CD5 /* LorentzApp.swift */; };
 		D499B18327B205DA00717CD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17227B205D800717CD5 /* ContentView.swift */; };
@@ -99,6 +103,8 @@
 		D4140D6E27B89BBC00A324ED /* SpriteKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKit.swift; sourceTree = "<group>"; };
 		D4140D7127B89C5C00A324ED /* SpriteProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteProxy.swift; sourceTree = "<group>"; };
 		D4140D7627B89D7A00A324ED /* AppDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefinitions.swift; sourceTree = "<group>"; };
+		D4140DC127B9966900A324ED /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		D4140DC427B9974100A324ED /* SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI.swift; sourceTree = "<group>"; };
 		D499B17127B205D800717CD5 /* LorentzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LorentzApp.swift; sourceTree = "<group>"; };
 		D499B17227B205D800717CD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D499B17327B205DA00717CD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,8 +262,10 @@
 			isa = PBXGroup;
 			children = (
 				D4ADF10827B708ED006CA65C /* CoreGraphics.swift */,
+				D4140DC127B9966900A324ED /* Foundation.swift */,
 				D4ADF10727B708ED006CA65C /* Image.swift */,
 				D4140D6E27B89BBC00A324ED /* SpriteKit.swift */,
+				D4140DC427B9974100A324ED /* SwiftUI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +427,8 @@
 				D4140D6C27B899FC00A324ED /* GameScene.swift in Sources */,
 				D4D4530827B758E7008B6E0C /* SpriteProxyView.swift in Sources */,
 				D4ADF10927B708ED006CA65C /* Image.swift in Sources */,
+				D4140DC527B9974100A324ED /* SwiftUI.swift in Sources */,
+				D4140DC227B9966900A324ED /* Foundation.swift in Sources */,
 				D4ADF11127B7416B006CA65C /* SelectorView.swift in Sources */,
 				D499B18327B205DA00717CD5 /* ContentView.swift in Sources */,
 				D4140D6F27B89BBC00A324ED /* SpriteKit.swift in Sources */,
@@ -440,6 +450,8 @@
 				D4140D6D27B899FD00A324ED /* GameScene.swift in Sources */,
 				D4D4530927B758E7008B6E0C /* SpriteProxyView.swift in Sources */,
 				D4ADF10A27B708ED006CA65C /* Image.swift in Sources */,
+				D4140DC627B9974100A324ED /* SwiftUI.swift in Sources */,
+				D4140DC327B9966900A324ED /* Foundation.swift in Sources */,
 				D4ADF11227B7416B006CA65C /* SelectorView.swift in Sources */,
 				D499B18427B205DA00717CD5 /* ContentView.swift in Sources */,
 				D4140D7027B89BBC00A324ED /* SpriteKit.swift in Sources */,

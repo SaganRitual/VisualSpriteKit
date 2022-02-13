@@ -3,10 +3,8 @@
 import CoreGraphics
 import Foundation
 
-extension CGRect {
-    func scaled(to scale: Double) -> CGRect {
-        CGRect(origin: origin, size: size * scale)
-    }
+extension CGFloat {
+    func show(_ decimals: Int) -> String { Double(self).show(decimals) }
 }
 
 extension CGPoint {
@@ -18,7 +16,7 @@ extension CGPoint {
         formatter.maximumFractionDigits = decimals
         formatter.usesGroupingSeparator = false
 
-        return "(\(formatter.string(from: NSNumber(value: x))!), \(formatter.string(from: NSNumber(value: y))!))"
+        return "(\(Double(x).show(decimals)), \(Double(y).show(decimals)))"
     }
 
     func yFlip() -> CGPoint { CGPoint(x: x, y: y * -1) }
@@ -57,6 +55,12 @@ extension CGPoint {
 
     static func / (_ lhs: CGPoint, _ rhs: Double) -> CGPoint {
         CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
+    }
+}
+
+extension CGRect {
+    func scaled(to scale: Double) -> CGRect {
+        CGRect(origin: origin, size: size * scale)
     }
 }
 

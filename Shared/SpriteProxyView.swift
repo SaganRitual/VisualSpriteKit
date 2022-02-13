@@ -13,7 +13,6 @@ struct SpriteProxyView: View, Identifiable {
 
     @State private var proxyState = ProxyState.menu
     @State private var rotationAnchor = Angle.zero
-    @State private var rotationOffset = Angle.zero
 
     @ObservedObject var proxy: SpriteProxy
 
@@ -43,30 +42,33 @@ struct SpriteProxyView: View, Identifiable {
                 )
                 .onGesture(
                     onPan: { sender in
-                        let t = sender.location(in: nil) - proxy.position
+                        let s = sender.location(in: sender.view)
+                        let t = (s - CGPoint(x: 150, y: 150)).yFlip().applying(CGAffineTransform(rotationAngle: -(proxy.rotation + proxy.rotationOffset).radians))
+                        let a = -atan2(t.y, t.x)
 
                         if sender.state == .began {
-                            rotationAnchor = -.radians(atan2(t.y, t.x))
+                            rotationAnchor = -Angle.radians(a)
                         } else {
-                            rotationOffset = rotationAnchor + .radians(atan2(t.y, t.x))
+                            proxy.rotationOffset = rotationAnchor + Angle.radians(a)
                         }
 
                         if sender.state == .ended {
-                            proxy.rotation += rotationOffset
-                            rotationOffset = .zero
+                            proxy.rotation += proxy.rotationOffset
+                            proxy.rotationOffset = .zero
                         }
                     },
                     onTap: { _ in proxyState = .menu }
                 )
-                .rotationEffect(proxy.rotation + rotationOffset)
+                .rotationEffect(proxy.rotation + proxy.rotationOffset)
 
             case .scale:
                 SelectorView(
-                    mode: .scale, rotation: proxy.rotation, size: CGSize(width: 100, height: 100) * proxy.scale
+                    mode: .scale, rotation: proxy.rotation, size: CGSize(width: 200, height: 200) * proxy.scale
                 )
                 .onGesture(
                     onPinch: { sender in
-                        proxy.scale = sender.scale
+                        proxy.scale *= sender.scale
+                        sender.scale = 1.0
                     },
                     onTap: { _ in proxyState = .menu }
                 )
