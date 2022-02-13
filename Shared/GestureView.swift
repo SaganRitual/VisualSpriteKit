@@ -34,9 +34,9 @@ struct GestureView: View {
                     }
                 )
 
-            Text(diagnosticText)
-                .foregroundColor(.yellow)
-                .font(.title)
+//            Text(diagnosticText)
+//                .foregroundColor(.yellow)
+//                .font(.title)
 
             ForEach(spriteProxies) {
                 $0

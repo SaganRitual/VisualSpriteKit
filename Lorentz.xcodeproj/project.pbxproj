@@ -21,6 +21,16 @@
 		D4140DC327B9966900A324ED /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC127B9966900A324ED /* Foundation.swift */; };
 		D4140DC527B9974100A324ED /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC427B9974100A324ED /* SwiftUI.swift */; };
 		D4140DC627B9974100A324ED /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4140DC427B9974100A324ED /* SwiftUI.swift */; };
+		D4140DCC27B9B54100A324ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D4140DC727B9B54100A324ED /* .gitignore */; };
+		D4140DCD27B9B54100A324ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D4140DC727B9B54100A324ED /* .gitignore */; };
+		D4140DCE27B9B54100A324ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4140DC827B9B54100A324ED /* README.md */; };
+		D4140DCF27B9B54100A324ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4140DC827B9B54100A324ED /* README.md */; };
+		D4140DD027B9B54100A324ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D4140DC927B9B54100A324ED /* LICENSE */; };
+		D4140DD127B9B54100A324ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D4140DC927B9B54100A324ED /* LICENSE */; };
+		D4140DD227B9B54100A324ED /* .overcommit.yml in Resources */ = {isa = PBXBuildFile; fileRef = D4140DCA27B9B54100A324ED /* .overcommit.yml */; };
+		D4140DD327B9B54100A324ED /* .overcommit.yml in Resources */ = {isa = PBXBuildFile; fileRef = D4140DCA27B9B54100A324ED /* .overcommit.yml */; };
+		D4140DD427B9B54100A324ED /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = D4140DCB27B9B54100A324ED /* CODE_OF_CONDUCT.md */; };
+		D4140DD527B9B54100A324ED /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = D4140DCB27B9B54100A324ED /* CODE_OF_CONDUCT.md */; };
 		D499B18127B205DA00717CD5 /* LorentzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17127B205D800717CD5 /* LorentzApp.swift */; };
 		D499B18227B205DA00717CD5 /* LorentzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17127B205D800717CD5 /* LorentzApp.swift */; };
 		D499B18327B205DA00717CD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499B17227B205D800717CD5 /* ContentView.swift */; };
@@ -105,6 +115,11 @@
 		D4140D7627B89D7A00A324ED /* AppDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefinitions.swift; sourceTree = "<group>"; };
 		D4140DC127B9966900A324ED /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		D4140DC427B9974100A324ED /* SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI.swift; sourceTree = "<group>"; };
+		D4140DC727B9B54100A324ED /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D4140DC827B9B54100A324ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4140DC927B9B54100A324ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D4140DCA27B9B54100A324ED /* .overcommit.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .overcommit.yml; sourceTree = "<group>"; };
+		D4140DCB27B9B54100A324ED /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		D499B17127B205D800717CD5 /* LorentzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LorentzApp.swift; sourceTree = "<group>"; };
 		D499B17227B205D800717CD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D499B17327B205DA00717CD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +186,11 @@
 		D499B16B27B205D800717CD5 = {
 			isa = PBXGroup;
 			children = (
+				D4140DC727B9B54100A324ED /* .gitignore */,
+				D4140DCA27B9B54100A324ED /* .overcommit.yml */,
+				D4140DCB27B9B54100A324ED /* CODE_OF_CONDUCT.md */,
+				D4140DC927B9B54100A324ED /* LICENSE */,
+				D4140DC827B9B54100A324ED /* README.md */,
 				D499B17027B205D800717CD5 /* Shared */,
 				D499B17F27B205DA00717CD5 /* macOS */,
 				D499B17927B205DA00717CD5 /* Products */,
@@ -353,14 +373,19 @@
 				D499B1D227B2062400717CD5 /* character_0006.png in Resources */,
 				D499B19227B2060700717CD5 /* SpritePool.xcassets in Resources */,
 				D499B1DE27B2062400717CD5 /* character_0016.png in Resources */,
+				D4140DCE27B9B54100A324ED /* README.md in Resources */,
 				D499B1CC27B2062400717CD5 /* character_0010.png in Resources */,
 				D499B1BE27B2062400717CD5 /* character_0023.png in Resources */,
 				D499B1E227B2062400717CD5 /* character_0014.png in Resources */,
 				D499B1E427B2062400717CD5 /* character_0015.png in Resources */,
 				D499B1CA27B2062400717CD5 /* character_0011.png in Resources */,
+				D4140DD027B9B54100A324ED /* LICENSE in Resources */,
+				D4140DD427B9B54100A324ED /* CODE_OF_CONDUCT.md in Resources */,
 				D499B1B227B2062400717CD5 /* character_0024.png in Resources */,
+				D4140DCC27B9B54100A324ED /* .gitignore in Resources */,
 				D499B1C227B2062400717CD5 /* character_0021.png in Resources */,
 				D499B1D427B2062400717CD5 /* character_0007.png in Resources */,
+				D4140DD227B9B54100A324ED /* .overcommit.yml in Resources */,
 				D499B1BA27B2062400717CD5 /* character_0026.png in Resources */,
 				D499B1D027B2062400717CD5 /* character_0012.png in Resources */,
 				D499B1CE27B2062400717CD5 /* character_0004.png in Resources */,
@@ -389,14 +414,19 @@
 				D499B1D327B2062400717CD5 /* character_0006.png in Resources */,
 				D499B19327B2060700717CD5 /* SpritePool.xcassets in Resources */,
 				D499B1DF27B2062400717CD5 /* character_0016.png in Resources */,
+				D4140DCF27B9B54100A324ED /* README.md in Resources */,
 				D499B1CD27B2062400717CD5 /* character_0010.png in Resources */,
 				D499B1BF27B2062400717CD5 /* character_0023.png in Resources */,
 				D499B1E327B2062400717CD5 /* character_0014.png in Resources */,
 				D499B1E527B2062400717CD5 /* character_0015.png in Resources */,
 				D499B1CB27B2062400717CD5 /* character_0011.png in Resources */,
+				D4140DD127B9B54100A324ED /* LICENSE in Resources */,
+				D4140DD527B9B54100A324ED /* CODE_OF_CONDUCT.md in Resources */,
 				D499B1B327B2062400717CD5 /* character_0024.png in Resources */,
+				D4140DCD27B9B54100A324ED /* .gitignore in Resources */,
 				D499B1C327B2062400717CD5 /* character_0021.png in Resources */,
 				D499B1D527B2062400717CD5 /* character_0007.png in Resources */,
+				D4140DD327B9B54100A324ED /* .overcommit.yml in Resources */,
 				D499B1BB27B2062400717CD5 /* character_0026.png in Resources */,
 				D499B1D127B2062400717CD5 /* character_0012.png in Resources */,
 				D499B1CF27B2062400717CD5 /* character_0004.png in Resources */,
