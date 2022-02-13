@@ -11,7 +11,6 @@ struct SpriteProxyView: View, Identifiable {
         case menu, move, rotate, scale
     }
 
-    @State private var offset = CGPoint.zero
     @State private var proxyState = ProxyState.menu
     @State private var rotationAnchor = Angle.zero
     @State private var rotationOffset = Angle.zero
@@ -29,11 +28,11 @@ struct SpriteProxyView: View, Identifiable {
                 )
                 .onGesture(
                     onPan: { sender in
-                        offset = sender.translation(in: sender.view)
+                        proxy.offset = sender.translation(in: sender.view)
 
                         if sender.state == .ended {
-                            proxy.position += offset
-                            offset = .zero
+                            proxy.position += proxy.offset
+                            proxy.offset = .zero
                         }
                     },
                     onTap: { _ in proxyState = .menu }
@@ -73,7 +72,7 @@ struct SpriteProxyView: View, Identifiable {
                 )
             }
         }
-        .offset(offset.asSize())
+        .offset(proxy.offset.asSize())
         .position(proxy.position)
     }
 }

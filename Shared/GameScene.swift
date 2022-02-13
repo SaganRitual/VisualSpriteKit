@@ -29,12 +29,16 @@ extension GameScene {
             sprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             sprite.scale = 1.0
             sprite.size = CGSize(width: 128, height: 128)
-            sprite.position = (position - (myself.viewSize / 2)).yFlip() * (myself.size / myself.viewSize)
+            sprite.position = myself.toScene(position)
             myself.backgroundSprite.addChild(sprite)
         }
 
         backgroundSprite.run(action)
         return sprite
+    }
+
+    func toScene(_ position: CGPoint) -> CGPoint {
+        (position - (viewSize / 2)).yFlip() * (size / viewSize)
     }
 }
 

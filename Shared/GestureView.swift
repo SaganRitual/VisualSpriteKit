@@ -28,7 +28,7 @@ struct GestureView: View {
                         let position = sender.location(in: sender.view)
                         diagnosticText = "Tapped at \(position.show(3))"
 
-                        let proxy = SpriteProxy(position, .zero, 1.0)
+                        let proxy = SpriteProxy(.zero, position, .zero, 1.0)
                         proxy.postInit(gameScene.addSprite(at: position))
                         spriteProxies.append(SpriteProxyView(proxy: proxy))
                     }
