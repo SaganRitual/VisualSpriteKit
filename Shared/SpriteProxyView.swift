@@ -5,22 +5,17 @@ import SwiftUI
 import SpriteKit
 
 struct SpriteProxyView: View, Identifiable {
-    let id = UUID()
+    var id: UUID { proxy.id }
 
-    enum ProxyState {
-        case menu, move, rotate, scale
-    }
-
-    @State private var proxyState = ProxyState.menu
     @State private var rotationAnchor = Angle.zero
 
     @ObservedObject var proxy: SpriteProxy
 
     var body: some View {
         Group {
-            switch proxyState {
+            switch proxy.proxyState {
             case .menu:
-                SpriteMenu(proxyState: $proxyState)
+                SpriteMenu(spriteID: id, proxy: proxy)
             case .move:
                 SelectorView(
                     mode: .move, rotation: proxy.rotation, size: CGSize(width: 100, height: 100)
@@ -34,7 +29,7 @@ struct SpriteProxyView: View, Identifiable {
                             proxy.offset = .zero
                         }
                     },
-                    onTap: { _ in proxyState = .menu }
+                    onTap: { _ in proxy.proxyState = .menu }
                 )
             case .rotate:
                 SelectorView(
@@ -57,7 +52,7 @@ struct SpriteProxyView: View, Identifiable {
                             proxy.rotationOffset = .zero
                         }
                     },
-                    onTap: { _ in proxyState = .menu }
+                    onTap: { _ in proxy.proxyState = .menu }
                 )
                 .rotationEffect(proxy.rotation + proxy.rotationOffset)
 
@@ -70,7 +65,7 @@ struct SpriteProxyView: View, Identifiable {
                         proxy.scale *= sender.scale
                         sender.scale = 1.0
                     },
-                    onTap: { _ in proxyState = .menu }
+                    onTap: { _ in proxy.proxyState = .menu }
                 )
             }
         }

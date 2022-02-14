@@ -1,30 +1,33 @@
 // We are a way for the cosmos to know itself. -- C. Sagan
 
+import UIKit
 import SwiftUI
 
 struct SpriteMenu: View {
-    @Binding var proxyState: SpriteProxyView.ProxyState
+    @EnvironmentObject var gameScene: GameScene
+    let spriteID: UUID
+    @ObservedObject var proxy: SpriteProxy
 
     var body: some View {
         Menu(
             content: {
                 Section {
                     Button(
-                        action: { proxyState = .move },
+                        action: { proxy.proxyState = .move },
                         label: {
                             Label("Move", systemImage: "arrow.up.and.down.and.arrow.left.and.right")
                         }
                     )
 
                     Button(
-                        action: { proxyState = .rotate },
+                        action: { proxy.proxyState = .rotate },
                         label: {
                             Label("Rotate", systemImage: "arrow.triangle.2.circlepath")
                         }
                     )
 
                     Button(
-                        action: { proxyState = .scale },
+                        action: { proxy.proxyState = .scale },
                         label: {
                             Label(
                                 "Scale",
@@ -49,8 +52,22 @@ struct SpriteMenu: View {
                         }
                     )
 
-                    Button(
-                        action: {},
+                    Menu(
+                        content: {
+                            ForEach(gameScene.kenneyPool.characters) { kenneyCharacter in
+                                Button(
+                                    action: {
+                                        gameScene.changeSpriteImage(id: spriteID, to: kenneyCharacter)
+                                    },
+                                    label: {
+                                        HStack {
+                                            Text(kenneyCharacter.folder)
+                                            kenneyCharacter.images.first!
+                                        }
+                                    }
+                                )
+                            }
+                        },
                         label: {
                             Label("Sprites", systemImage: "square.on.circle")
                         }
@@ -59,20 +76,9 @@ struct SpriteMenu: View {
             },
             label: {
                 Circle()
-                    .fill(.blue)
-                    .frame(width: 32, height: 32)
+                    .strokeBorder(.blue, lineWidth: 2)
+                .frame(width: 64, height: 64)
             }
         )
-    }
-}
-
-struct SpriteMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        GeometryReader { gp in
-            SpriteMenu(
-                proxyState: .constant(.menu)
-            )
-            .preferredColorScheme(.dark)
-        }
     }
 }

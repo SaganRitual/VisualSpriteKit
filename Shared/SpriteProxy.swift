@@ -5,11 +5,19 @@ import SpriteKit
 import SwiftUI
 
 class SpriteProxy: ObservableObject {
+    let id = UUID()
+
     @Published var offset: CGPoint
     @Published var position: CGPoint
     @Published var rotation: Angle
     @Published var rotationOffset = Angle.zero
     @Published var scale: Double
+
+    enum ProxyState {
+        case menu, move, rotate, scale
+    }
+
+    @Published var proxyState = ProxyState.menu
 
     private var sprite: SKSpriteNode!
 
@@ -32,6 +40,8 @@ class SpriteProxy: ObservableObject {
     }
 
     func postInit(_ sprite: SKSpriteNode) {
+        sprite.id = id
+
         self.sprite = sprite
 
         oOffset = $offset.sink { [weak self, weak sprite] in

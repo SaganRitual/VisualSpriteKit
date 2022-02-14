@@ -1,7 +1,6 @@
 import SpriteKit
 
 class SpritePool {
-    static let character_0001 = SpritePool("Characters", "character_0001")
     static let crosshairRingsLarge = SpritePool("Markers", "crosshair-ring-1024-4")
     static let crosshairRings2048x2048x24 = SpritePool("Markers", "crosshair-ring-2048x2048x24")
     static let dots = SpritePool("Markers", "circle-solid", cPreallocate: 100000)
