@@ -13,7 +13,14 @@ Developer tool/toy for experimentation with Apple Swift's SpriteKit
 
 # Usage
 
-Tap to place a sprite. Tap the blue ring on the sprite to bring up a menu of options.
-So far the only working ones are move, rotate, and scale. Move by dragging the center, rotate by
-single-finger dragging within the selection indicator. Scale with pinch/unpinch. Tap the sprite
-again to dismiss the selection indicator. More to come
+Tap to place a sprite. Tap the blue ring on the sprite to bring up a menu of options
+* Transformations: an action cursor appears over the sprite
+  * Move: single-finger drag the cursor to where you want it, and let go
+  * Rotate: single-finger drag anywhere on the ring
+  * Scale: pinch/unpinch the ring
+
+Tap again to dismiss the action cursor
+
+* Sprites: select the desired sprite from the menu
+
+More to come
